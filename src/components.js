@@ -1,8 +1,36 @@
+// Function to set active navigation link based on current page
+function setActiveNavLink() {
+  // Get current page filename
+  // console.log(window.location.pathname.split('/'))
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  // Remove active class from all nav links
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  // Add active class to current page link
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (
+      href === currentPage ||
+      (currentPage === "" && href === "index.html") ||
+      (currentPage === "index.html" && href === "index.html")
+    ) {
+      link.classList.add("active");
+    }
+  });
+}
+
 // Function to initialize navbar functionality
 function initNavbar() {
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
+
+  // Set active navigation link
+  setActiveNavLink();
 
   // Check if elements exist before adding event listeners
   if (navToggle && navMenu) {
@@ -60,41 +88,54 @@ function initNavbar() {
 // Function to initialize footer functionality (if needed)
 function initFooter() {
   // Add any footer-specific JavaScript here
+  document
+    .querySelector(".newsletter-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.querySelector(".newsletter-input").value;
+      if (email) {
+        alert("Thank you for subscribing!");
+        document.querySelector(".newsletter-input").value = "";
+      }
+    });
   console.log("Footer initialized");
 }
 
 // Function to load HTML components
 function loadComponent(elementId, filePath, callback) {
   fetch(filePath)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       return response.text();
     })
-    .then(data => {
+    .then((data) => {
       document.getElementById(elementId).innerHTML = data;
-      
+
       // Execute callback after component is loaded
-      if (callback && typeof callback === 'function') {
+      if (callback && typeof callback === "function") {
         // Small delay to ensure DOM is updated
         setTimeout(callback, 10);
       }
     })
-    .catch(error => {
-      console.error('Error loading component:', error);
+    .catch((error) => {
+      console.error("Error loading component:", error);
     });
 }
 
 // Load components when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Load navbar with initialization callback
-  if (document.getElementById('navbar')) {
-    loadComponent('navbar', 'components/navbar.html', initNavbar);
+  if (document.getElementById("navbar")) {
+    loadComponent("navbar", "components/navbar.html", initNavbar);
+  } else {
+    // If navbar is already in the page (not loaded as component)
+    initNavbar();
   }
-  
+
   // Load footer with initialization callback
-  if (document.getElementById('footer')) {
-    loadComponent('footer', 'components/footer.html', initFooter);
+  if (document.getElementById("footer")) {
+    loadComponent("footer", "components/footer.html", initFooter);
   }
 });
