@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savoury Bites - Our Menu</title>
-  <link rel="stylesheet" href="global.css">
-  <script src="https://unpkg.com/feather-icons"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - The Fictional Feast</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="navbar"></div>
-  
-  <main>
-    <h1>Menu page of the website</h1>
-    <p>This is your Menu area.</p>
-  </main>
-  
-  <div id="footer"></div>
-  
-  <script src="components.js"></script>
-    <script>
-        setTimeout(() => {
-            feather.replace();
-        }, 100);
-    </script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu-page">
+            <h2>Our Menu</h2>
+            <div class="filters">
+                <button data-filter="all">All</button>
+                <button data-filter="Appetizers">Appetizers</button>
+                <button data-filter="Main Courses">Main Courses</button>
+                <button data-filter="Desserts">Desserts</button>
+            </div>
+            <div id="menu-container" class="menu-container">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The Fictional Feast. All rights reserved.</p>
+    </footer>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="menuItems.js"></script>
+    <script type="module" src="renderMenu.js"></script>
 </body>
 </html>
