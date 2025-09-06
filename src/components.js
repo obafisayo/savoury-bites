@@ -138,4 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("footer")) {
     loadComponent("footer", "components/footer.html", initFooter);
   }
+
+  setTimeout(() => {
+      feather.replace();
+  }, 100);
 });
