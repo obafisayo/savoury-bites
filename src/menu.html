@@ -5,23 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Savoury Bites - Our Menu</title>
   <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="menu.css">
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
   <div id="navbar"></div>
   
   <main>
-    <h1>Menu page of the website</h1>
-    <p>This is your Menu area.</p>
+    <section class="menu-hero">
+      <h1>Our Menu</h1>
+      <p>Explore Our Delicious Offerings</p>
+    </section>
+     <div class="menu-controls">
+        <button data-category="Breakfast">Breakfast</button>
+        <button data-category="Lunch">Lunch</button>
+        <button data-category="Dinner">Dinner</button>
+        <button data-category="Dessert">Dessert</button>
+        <button data-category="Drinks">Drinks</button>
+        <button data-category="Soups">Soups</button>
+        <button data-category="Snack">Snack</button>
+      </div>
+    <div class="container">
+     
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
   </main>
   
   <div id="footer"></div>
   
+  <script src="menuItems.js"></script>
+  <script src="renderMenu.js"></script>
   <script src="components.js"></script>
-    <script>
-        setTimeout(() => {
-            feather.replace();
-        }, 100);
-    </script>
+  <script>
+    const menuRenderer = new MenuRenderer(menuItems);
+
+    //attach one event listener per button dynamically
+    document.querySelectorAll(".menu-controls button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const category = btn.dataset.category;
+        menuRenderer.filterByCategory(category);
+      });
+    });
+
+    //render icons
+    setTimeout(() => {
+      feather.replace();
+    }, 100);
+  </script>
 </body>
 </html>
