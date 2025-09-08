@@ -39,7 +39,7 @@
   background: var(--white);
   padding: 30px;
   border-radius: 12px;
-  box-shadow: none
+  box-shadow: none;
   max-width: 600px;
   margin: 0 auto;
   display: flex;
@@ -121,3 +121,13 @@
   width: 18px;
   height: 18px;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  font-weight: bold;
+  display: block;
+  margin-top: 4px;
+}
+
+
