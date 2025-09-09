@@ -1,3 +1,4 @@
+/* Contact Section*/
 .contact-section {
   padding: 50px 0 100px;
   background-color: var(--white);
@@ -93,6 +94,7 @@
   transform: scale(1.05);
 }
 
+/* Contact Info */
 #contact-info {
   margin-top: 2rem;
   text-align: left;
@@ -122,6 +124,7 @@
   height: 18px;
 }
 
+/* Error Message */
 .error-message {
   color: red;
   font-size: 0.9em;
