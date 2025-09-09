@@ -1,25 +1,16 @@
 // Function to set active navigation link based on current page
 function setActiveNavLink() {
-  // Get current page filename
-  // console.log(window.location.pathname.split('/'))
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  // Remove active class from all nav links
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
-    link.classList.remove("active");
-  });
-
-  // Add active class to current page link
-  navLinks.forEach((link) => {
     const href = link.getAttribute("href");
-    if (
+    link.classList.toggle(
+      "active",
       href === currentPage ||
-      (currentPage === "" && href === "index.html") ||
-      (currentPage === "index.html" && href === "index.html")
-    ) {
-      link.classList.add("active");
-    }
+        (currentPage === "" && href === "index.html") ||
+        currentPage === "index.html"
+    );
   });
 }
 
@@ -29,14 +20,12 @@ function initNavbar() {
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  // Set active navigation link
+  // Highlight active page
   setActiveNavLink();
 
-  // Check if elements exist before adding event listeners
   if (navToggle && navMenu) {
     // Toggle mobile menu
     navToggle.addEventListener("click", () => {
-      console.log("navbar clicked");
       navMenu.classList.toggle("active");
       navToggle.classList.toggle("active");
     });
@@ -51,22 +40,20 @@ function initNavbar() {
   }
 
   // Close mobile menu when a link is clicked
-  if (navLinks.length > 0) {
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (navMenu && navToggle) {
-          navMenu.classList.remove("active");
-          navToggle.classList.remove("active");
-        }
-      });
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (navMenu && navToggle) {
+        navMenu.classList.remove("active");
+        navToggle.classList.remove("active");
+      }
     });
-  }
+  });
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", (e) => {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const target = document.querySelector(anchor.getAttribute("href"));
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
@@ -76,7 +63,7 @@ function initNavbar() {
     });
   });
 
-  // Handle window resize
+  // Reset nav state on window resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768 && navMenu && navToggle) {
       navMenu.classList.remove("active");
@@ -85,19 +72,22 @@ function initNavbar() {
   });
 }
 
-// Function to initialize footer functionality (if needed)
+// Function to initialize footer functionality
 function initFooter() {
-  // Add any footer-specific JavaScript here
-  document
-    .querySelector(".newsletter-form")
-    .addEventListener("submit", function (e) {
+  const newsletterForm = document.querySelector(".newsletter-form");
+  const newsletterInput = document.querySelector(".newsletter-input");
+
+  if (newsletterForm && newsletterInput) {
+    newsletterForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const email = document.querySelector(".newsletter-input").value;
+      const email = newsletterInput.value.trim();
       if (email) {
         alert("Thank you for subscribing!");
-        document.querySelector(".newsletter-input").value = "";
+        newsletterInput.value = "";
       }
     });
+  }
+
   console.log("Footer initialized");
 }
 
@@ -106,40 +96,42 @@ function loadComponent(elementId, filePath, callback) {
   fetch(filePath)
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.text();
     })
     .then((data) => {
-      document.getElementById(elementId).innerHTML = data;
-
-      // Execute callback after component is loaded
-      if (callback && typeof callback === "function") {
-        // Small delay to ensure DOM is updated
-        setTimeout(callback, 10);
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.innerHTML = data;
+        if (typeof callback === "function") {
+          setTimeout(callback, 10); // allow DOM update
+        }
       }
     })
     .catch((error) => {
-      console.error("Error loading component:", error);
+      console.error(`Error loading component (${filePath}):`, error);
     });
 }
 
-// Load components when DOM is ready
-document.addEventListener("DOMContentLoaded", function () {
-  // Load navbar with initialization callback
+// DOM Ready
+document.addEventListener("DOMContentLoaded", () => {
+  // Load navbar
   if (document.getElementById("navbar")) {
     loadComponent("navbar", "components/navbar.html", initNavbar);
   } else {
-    // If navbar is already in the page (not loaded as component)
-    initNavbar();
+    initNavbar(); // fallback if navbar already exists
   }
 
-  // Load footer with initialization callback
+  // Load footer
   if (document.getElementById("footer")) {
     loadComponent("footer", "components/footer.html", initFooter);
   }
 
+  // Initialize feather icons
   setTimeout(() => {
+    if (typeof feather !== "undefined") {
       feather.replace();
+    }
   }, 100);
 });
