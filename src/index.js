@@ -25,13 +25,11 @@ class MenuRenderer {
     this.menuNav.innerHTML = categories
       .map(
         (category) => `
-                    <button class="nav-item ${
-                      category === this.currentFilter ? "active" : ""
-                    }" 
-                            data-category="${category}">
-                        ${category}
-                    </button>
-                `
+          <button class="nav-item ${category === this.currentFilter ? "active" : ""}" 
+                  data-category="${category}">
+            ${category}
+          </button>
+        `
       )
       .join("");
   }
@@ -50,21 +48,15 @@ class MenuRenderer {
     this.menuGrid.innerHTML = filteredItems
       .map(
         (item) => `
-                    <div class="menu-item">
-                        <img src="${item.image}" alt="${
-          item.name
-        }" class="menu-item-image">
-                        <div class="menu-item-content">
-                            <h3 class="menu-item-title">${item.name}</h3>
-                            <p class="menu-item-description">${
-                              item.description
-                            }</p>
-                            <div class="menu-item-price">${item.price.toFixed(
-                              1
-                            )}$</div>
-                        </div>
-                    </div>
-                `
+          <div class="menu-item">
+            <img src="${item.image}" alt="${item.name}" class="menu-item-image">
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">${item.name}</h3>
+              <p class="menu-item-description">${item.description}</p>
+              <div class="menu-item-price">${item.price.toFixed(1)}$</div>
+            </div>
+          </div>
+        `
       )
       .join("");
   }
