@@ -141,7 +141,7 @@
 
 .about-section {
   background-color: black;
-  padding: 0 5%;
+  padding: 100px 5%;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -301,7 +301,7 @@
 .why-choose-section {
   margin: 0 auto;
   background: black;
-  padding: 0 5%;
+  padding: 10px 5%;
   position: relative;
   overflow: hidden;
 }
@@ -464,7 +464,7 @@
 }
 
 .menu-section {
-  padding: 0 5%;
+  padding: 50px 5%;
 }
 
 .menu-base {
