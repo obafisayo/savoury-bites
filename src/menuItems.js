@@ -65,15 +65,15 @@ const menuItems = [
     image:
       "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=200&h=200&fit=crop&q=80",
   },
-  {
-    id: 8,
-    name: "Mushaom Pizza",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 12.5,
-    category: "Lunch",
-    image:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=200&fit=crop&q=80",
-  },
+  // {
+  //   id: 8,
+  //   name: "Mushaom Pizza",
+  //   description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
+  //   price: 12.5,
+  //   category: "Lunch",
+  //   image:
+  //     "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=200&fit=crop&q=80",
+  // },
 
   // Dinner
   {
@@ -175,3 +175,5 @@ const menuItems = [
       "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=200&h=200&fit=crop&q=80",
   },
 ];
+
+export default menuItems;

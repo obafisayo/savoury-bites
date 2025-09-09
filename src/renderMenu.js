@@ -1,194 +1,30 @@
-const menuItems = [
-  // Breakfast
-  {
-    id: 1,
-    name: "Fresh Breakfast",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 14.5,
-    category: "Breakfast",
-    image:
-      "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 2,
-    name: "Mild Butter",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 12.5,
-    category: "Breakfast",
-    image:
-      "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 3,
-    name: "Fresh Bread",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 12.5,
-    category: "Breakfast",
-    image:
-      "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=200&h=200&fit=crop&q=80",
-  },
+import menuItems from "./menuItems.js";
 
-  // Lunch
-  {
-    id: 4,
-    name: "Lettuce Leaf",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 12.5,
-    category: "Lunch",
-    image:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 5,
-    name: "Glow Cheese",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 12.5,
-    category: "Lunch",
-    image:
-      "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 6,
-    name: "Italian Pizza",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 14.5,
-    category: "Lunch",
-    image:
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 7,
-    name: "Slice Beef",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 12.5,
-    category: "Lunch",
-    image:
-      "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 8,
-    name: "Mushaom Pizza",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 12.5,
-    category: "Lunch",
-    image:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=200&fit=crop&q=80",
-  },
-
-  // Dinner
-  {
-    id: 9,
-    name: "Grilled Salmon",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 18.5,
-    category: "Dinner",
-    image:
-      "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 10,
-    name: "Steak Dinner",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 22.5,
-    category: "Dinner",
-    image:
-      "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=200&h=200&fit=crop&q=80",
-  },
-
-  // Dessert
-  {
-    id: 11,
-    name: "Chocolate Cake",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 8.5,
-    category: "Dessert",
-    image:
-      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 12,
-    name: "Ice Cream",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 6.5,
-    category: "Dessert",
-    image:
-      "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=200&h=200&fit=crop&q=80",
-  },
-
-  // Drink
-  {
-    id: 13,
-    name: "Fresh Juice",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 4.5,
-    category: "Drink",
-    image:
-      "https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 14,
-    name: "Coffee",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 3.5,
-    category: "Drink",
-    image:
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&h=200&fit=crop&q=80",
-  },
-
-  // Snack
-  {
-    id: 15,
-    name: "French Fries",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 5.5,
-    category: "Snack",
-    image:
-      "https://images.unsplash.com/photo-1576107232684-1279f390859f?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 16,
-    name: "Onion Rings",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 6.5,
-    category: "Snack",
-    image:
-      "https://images.unsplash.com/photo-1639024471283-03518883512d?w=200&h=200&fit=crop&q=80",
-  },
-
-  // Soups
-  {
-    id: 17,
-    name: "Tomato Soup",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 7.5,
-    category: "Soups",
-    image:
-      "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&h=200&fit=crop&q=80",
-  },
-  {
-    id: 18,
-    name: "Chicken Soup",
-    description: "Lacus nisl, et ac dapibus sit eu velit in consequat.",
-    price: 9.5,
-    category: "Soups",
-    image:
-      "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=200&h=200&fit=crop&q=80",
-  },
-];
-
-// renderMenu.js module
+console.log(menuItems);
 class MenuRenderer {
   constructor(menuData) {
     this.menuData = menuData;
-    this.currentFilter = "Breakfast";
-    this.menuNav = document.getElementById("menuNav");
+    this.currentFilters = {
+      categories: [],
+      search: "",
+      minPrice: null,
+      maxPrice: null,
+    };
+
+    this.categoryFilters = document.getElementById("categoryFilters");
     this.menuGrid = document.getElementById("menuGrid");
+    this.searchInput = document.getElementById("searchInput");
+    this.minPriceInput = document.getElementById("minPrice");
+    this.maxPriceInput = document.getElementById("maxPrice");
+    this.clearFiltersBtn = document.getElementById("clearFilters");
+    this.resultsCount = document.getElementById("resultsCount");
+    this.activeFilters = document.getElementById("activeFilters");
 
     this.init();
   }
 
   init() {
-    this.renderNavigation();
+    this.renderCategoryFilters();
     this.renderMenuItems();
     this.attachEventListeners();
   }
@@ -197,30 +33,25 @@ class MenuRenderer {
     return [...new Set(this.menuData.map((item) => item.category))];
   }
 
-  renderNavigation() {
+  renderCategoryFilters() {
     const categories = this.getCategories();
-    this.menuNav.innerHTML = categories
+    this.categoryFilters.innerHTML = categories
       .map(
-        (category) => `
-                    <button class="nav-item ${
-                      category === this.currentFilter ? "active" : ""
-                    }" 
-                            data-category="${category}">
-                        ${category}
-                    </button>
-                `
+        (category) =>
+          `<button class="category-btn" data-category="${category}">${category}</button>`
       )
       .join("");
   }
 
   renderMenuItems() {
-    const filteredItems = this.menuData.filter(
-      (item) => item.category === this.currentFilter
-    );
+    const filteredItems = this.getFilteredItems();
+
+    this.updateResultsInfo(filteredItems.length);
+    this.updateActiveFilters();
 
     if (filteredItems.length === 0) {
       this.menuGrid.innerHTML =
-        '<div class="no-items">No items found in this category</div>';
+        '<div class="no-items">No items match your current filters</div>';
       return;
     }
 
@@ -236,9 +67,14 @@ class MenuRenderer {
                             <p class="menu-item-description">${
                               item.description
                             }</p>
-                            <div class="menu-item-price">${item.price.toFixed(
-                              1
-                            )}$</div>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-price">$${item.price.toFixed(
+                                  2
+                                )}</div>
+                                <div class="menu-item-category">${
+                                  item.category
+                                }</div>
+                            </div>
                         </div>
                     </div>
                 `
@@ -246,27 +82,177 @@ class MenuRenderer {
       .join("");
   }
 
+  getFilteredItems() {
+    return this.menuData.filter((item) => {
+      // Category filter
+      if (
+        this.currentFilters.categories.length > 0 &&
+        !this.currentFilters.categories.includes(item.category)
+      ) {
+        return false;
+      }
+
+      // Search filter
+      if (
+        this.currentFilters.search &&
+        !item.name
+          .toLowerCase()
+          .includes(this.currentFilters.search.toLowerCase())
+      ) {
+        return false;
+      }
+
+      // Price filter
+      if (
+        this.currentFilters.minPrice !== null &&
+        item.price < this.currentFilters.minPrice
+      ) {
+        return false;
+      }
+
+      if (
+        this.currentFilters.maxPrice !== null &&
+        item.price > this.currentFilters.maxPrice
+      ) {
+        return false;
+      }
+
+      return true;
+    });
+  }
+
+  updateResultsInfo(count) {
+    this.resultsCount.textContent = `${count} item${
+      count !== 1 ? "s" : ""
+    } found`;
+  }
+
+  updateActiveFilters() {
+    const filters = [];
+
+    if (this.currentFilters.categories.length > 0) {
+      this.currentFilters.categories.forEach((category) => {
+        filters.push(
+          `<span class="filter-tag">${category} <span class="remove" onclick="menuRenderer.removeFilter('category', '${category}')"></span></span>`
+        );
+      });
+    }
+
+    if (this.currentFilters.search) {
+      filters.push(
+        `<span class="filter-tag">Search: "${this.currentFilters.search}" <span class="remove" onclick="menuRenderer.removeFilter('search')"></span></span>`
+      );
+    }
+
+    if (
+      this.currentFilters.minPrice !== null ||
+      this.currentFilters.maxPrice !== null
+    ) {
+      const priceText = `${
+        this.currentFilters.minPrice !== null
+          ? "$" + this.currentFilters.minPrice
+          : ""
+      }${
+        this.currentFilters.minPrice !== null &&
+        this.currentFilters.maxPrice !== null
+          ? " - "
+          : ""
+      }${
+        this.currentFilters.maxPrice !== null
+          ? "$" + this.currentFilters.maxPrice
+          : ""
+      }`;
+      filters.push(
+        `<span class="filter-tag">Price: ${priceText} <span class="remove" onclick="menuRenderer.removeFilter('price')"></span></span>`
+      );
+    }
+
+    this.activeFilters.innerHTML = filters.join("");
+  }
+
+  removeFilter(type, value = null) {
+    if (type === "category") {
+      this.currentFilters.categories = this.currentFilters.categories.filter(
+        (cat) => cat !== value
+      );
+      this.updateCategoryButtons();
+    } else if (type === "search") {
+      this.currentFilters.search = "";
+      this.searchInput.value = "";
+    } else if (type === "price") {
+      this.currentFilters.minPrice = null;
+      this.currentFilters.maxPrice = null;
+      this.minPriceInput.value = "";
+      this.maxPriceInput.value = "";
+    }
+
+    this.renderMenuItems();
+  }
+
+  updateCategoryButtons() {
+    document.querySelectorAll(".category-btn").forEach((btn) => {
+      btn.classList.toggle(
+        "active",
+        this.currentFilters.categories.includes(btn.dataset.category)
+      );
+    });
+  }
+
   attachEventListeners() {
-    this.menuNav.addEventListener("click", (e) => {
-      if (e.target.classList.contains("nav-item")) {
-        this.currentFilter = e.target.dataset.category;
-        this.updateActiveNavItem(e.target);
+    // Category filter buttons
+    this.categoryFilters.addEventListener("click", (e) => {
+      if (e.target.classList.contains("category-btn")) {
+        const category = e.target.dataset.category;
+
+        if (this.currentFilters.categories.includes(category)) {
+          this.currentFilters.categories =
+            this.currentFilters.categories.filter((cat) => cat !== category);
+        } else {
+          this.currentFilters.categories.push(category);
+        }
+
+        this.updateCategoryButtons();
         this.renderMenuItems();
       }
     });
-  }
 
-  updateActiveNavItem(activeItem) {
-    document.querySelectorAll(".nav-item").forEach((item) => {
-      item.classList.remove("active");
+    // Search input
+    this.searchInput.addEventListener("input", (e) => {
+      this.currentFilters.search = e.target.value.trim();
+      this.renderMenuItems();
     });
-    activeItem.classList.add("active");
-  }
 
-  filterByCategory(category) {
-    this.currentFilter = category;
-    this.renderNavigation();
-    this.renderMenuItems();
+    // Price inputs
+    this.minPriceInput.addEventListener("input", (e) => {
+      this.currentFilters.minPrice = e.target.value
+        ? parseFloat(e.target.value)
+        : null;
+      this.renderMenuItems();
+    });
+
+    this.maxPriceInput.addEventListener("input", (e) => {
+      this.currentFilters.maxPrice = e.target.value
+        ? parseFloat(e.target.value)
+        : null;
+      this.renderMenuItems();
+    });
+
+    // Clear filters button
+    this.clearFiltersBtn.addEventListener("click", () => {
+      this.currentFilters = {
+        categories: [],
+        search: "",
+        minPrice: null,
+        maxPrice: null,
+      };
+
+      this.searchInput.value = "";
+      this.minPriceInput.value = "";
+      this.maxPriceInput.value = "";
+
+      this.updateCategoryButtons();
+      this.renderMenuItems();
+    });
   }
 }
 
