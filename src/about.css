@@ -1,3 +1,4 @@
+/* About section */
 .about {
   padding: 60px 5%;
   background: #fafafa;
@@ -53,6 +54,7 @@
   color: #555;
 }
 
+/* Why Choose Us Section */
 .why-choose-us {
   padding: 40px 5%;
   /* background: #fffbe7; */
@@ -92,6 +94,7 @@
   font-size: 1rem;
 }
 
+/* Signature Dishes Section */
 .signature-dishes {
   padding: 50px 0;
 }
@@ -133,6 +136,8 @@
   margin: 0;
   line-height: 1.6;
 }
+
+/* General Section Stlying */
 section {
   padding: 60px 20px;
   margin-bottom: 60px;
@@ -154,6 +159,7 @@ h2 {
   text-align: center;
 }
 
+/* Call To Action Buttons */
 .cta-buttons {
   text-align: center;
   margin-top: 30px;
@@ -192,6 +198,8 @@ h2 {
 .btn:active {
   transform: scale(0.95);
 }
+
+/* Chefs Section */
 .chefs-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -268,6 +276,7 @@ h2 {
   background: #e74c3c;
 }
 
+/* Experience Section */
 .experience-it {
   padding: 0 5%;
 }
