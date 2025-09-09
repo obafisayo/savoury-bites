@@ -1,3 +1,4 @@
+/* Container */
 .container {
   max-width: 1400px;
   margin: 0 5%;
@@ -6,11 +7,9 @@
   flex-direction: row;
 }
 
-
+/* Header */
 .header {
-  background: url(../assets/menu-hero.png);
-  background-position: center;
-  background-size: cover;
+  background: url(../assets/menu-hero.png) center/cover no-repeat;
   color: white;
   padding: 40px 30px;
   text-align: center;
@@ -32,9 +31,10 @@
   z-index: 1;
 }
 
+/* Filters Section */
 .filters-section {
   margin-top: 100px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 5px;
   order: 1;
   padding: 30px;
@@ -49,12 +49,15 @@
   height: 100%;
 }
 
+/* Search Input */
 .search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
 .search-input {
-  color: black;
   width: 100%;
   max-width: 500px;
   padding: 15px 50px 15px 20px;
@@ -62,7 +65,8 @@
   border-radius: 5px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: #F9F0E2;
+  background: #f9f0e2;
+  color: black;
 }
 
 .search-input:focus {
@@ -70,25 +74,19 @@
   border-color: var(--primary-color);
 }
 
-.search-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
 .search-icon {
   position: absolute;
-  right: 0px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   color: white;
   font-size: 1.2rem;
-  height: 100%;
-  width: fit-content;
   padding: 14px;
   background-color: var(--primary-color);
+  height: 100%;
 }
 
+/* Filter Row & Groups */
 .filter-row {
   display: flex;
   gap: 30px;
@@ -108,6 +106,7 @@
   color: #333;
 }
 
+/* Category Buttons */
 .category-filters {
   display: flex;
   flex-wrap: wrap;
@@ -125,18 +124,15 @@
   font-weight: 500;
 }
 
-.category-btn:hover {
+.category-btn:hover,
+.category-btn.active {
   background: var(--primary-color);
   color: white;
+  border-color: var(--primary-color);
   transform: translateY(-2px);
 }
 
-.category-btn.active {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
-  color: white;
-}
-
+/* Price Filter */
 .price-filter {
   display: flex;
   flex-direction: column;
@@ -163,6 +159,7 @@
   border-color: var(--primary-color);
 }
 
+/* Clear Filters Button */
 .clear-filters-btn {
   padding: 12px 25px;
   background-color: var(--primary-color);
@@ -180,11 +177,13 @@
   transform: translateY(-2px);
 }
 
+/* Content */
 .content {
   padding: 30px;
   flex: 1;
 }
 
+/* Results Info */
 .results-info {
   display: flex;
   justify-content: space-between;
@@ -223,6 +222,7 @@
   font-size: 1rem;
 }
 
+/* Menu Grid & Items */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -260,10 +260,10 @@
 }
 
 .menu-item-description {
+  font-size: 0.9rem;
   color: #666;
   line-height: 1.5;
   margin-bottom: 15px;
-  font-size: 0.9rem;
 }
 
 .menu-item-footer {
@@ -287,6 +287,7 @@
   font-weight: 600;
 }
 
+/* No Items Placeholder */
 .no-items {
   text-align: center;
   padding: 60px 20px;
@@ -301,11 +302,13 @@
   margin-bottom: 20px;
 }
 
+/* Responsive Styles */
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
     margin: 0 2%;
   }
+
   .filters-section {
     max-width: 100%;
     min-width: unset;
@@ -314,6 +317,7 @@
     order: 0;
     padding: 20px;
   }
+
   .content {
     padding: 20px 0;
   }
@@ -323,33 +327,42 @@
   .header {
     padding: 25px 10px;
   }
+
   .header h1 {
     font-size: 1.5rem;
   }
+
   .filters-section {
     padding: 15px;
     gap: 15px;
     margin-top: 20px;
   }
+
   .filter-row {
     gap: 10px;
   }
+
   .filter-group {
     min-width: unset;
   }
+
   .search-input {
     padding: 12px 40px 12px 12px;
     font-size: 0.95rem;
   }
+
   .menu-item-content {
     padding: 15px;
   }
+
   .menu-item-title {
     font-size: 1rem;
   }
+
   .menu-item-price {
     font-size: 1.1rem;
   }
+
   .menu-item-image {
     height: 150px;
   }
@@ -359,13 +372,16 @@
   .header {
     padding: 15px 5px;
   }
+
   .filters-section {
     padding: 8px;
     gap: 8px;
   }
+
   .menu-item-content {
     padding: 10px;
   }
+
   .menu-item-image {
     height: 100px;
   }
