@@ -1,4 +1,3 @@
-/* About section */
 .about {
   padding: 60px 5%;
   background: #fafafa;
@@ -94,25 +93,28 @@
   font-size: 1rem;
 }
 
-/* Signature Dishes Section */
 .signature-dishes {
   padding: 50px 0;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  text-align: center;
+.dishes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
 }
 
 .dish-card {
   border: 1px solid #888;
   border-radius: 14px;
   padding: 18px 14px 10px 14px;
-  max-width: 260px;
-  flex: 1 1 220px;
+  width: 300px;
+  min-height: 400px;
+  min-width: 260px;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,6 +131,14 @@
   display: block;
 }
 
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .dish-description {
   font-size: 1rem;
   color: #444;
@@ -137,16 +147,9 @@
   line-height: 1.6;
 }
 
-/* General Section Stlying */
 section {
   padding: 60px 20px;
   margin-bottom: 60px;
-}
-
-.dishes {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
 }
 
 .dishes img {
@@ -159,7 +162,6 @@ h2 {
   text-align: center;
 }
 
-/* Call To Action Buttons */
 .cta-buttons {
   text-align: center;
   margin-top: 30px;
@@ -199,7 +201,6 @@ h2 {
   transform: scale(0.95);
 }
 
-/* Chefs Section */
 .chefs-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -239,7 +240,7 @@ h2 {
 
 .chef-role {
   font-style: italic;
-  color: #e74c3c;
+  color: var(--primary-color);
   margin-bottom: 10px;
   font-size: 0.9rem;
 }
@@ -273,14 +274,26 @@ h2 {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: #e74c3c;
+  background: var(--primary-color);
 }
 
-/* Experience Section */
 .experience-it {
   padding: 0 5%;
 }
 
 .experience-it p {
   text-align: center;
+}
+
+@media (max-width: 786px) {
+  .dishes {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 0 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+  }
 }
