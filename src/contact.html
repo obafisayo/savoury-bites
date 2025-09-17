@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savoury Bites - Contact us</title>
+  <title>Savoury Bites - Contact Us</title>
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="contact.css">
   <script src="https://unpkg.com/feather-icons"></script>
@@ -12,10 +12,14 @@
   <div id="navbar"></div>
   
   <main>
+    <!-- Contact Form -->
     <section class="contact-section">
       <h2>Contact Us</h2>
       <p>We’d love to hear from you. Please fill out the form below and we’ll get back to you shortly.</p>
+      
       <form id="contactForm" class="contact-form">
+        <input type="hidden" name="access_key" value="f3b65132-0a20-4a61-b48d-dfd73e1a1829">
+
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name" class="form-input" required>
 
@@ -25,46 +29,53 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Type your message..." class="form-input" required></textarea>
 
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
         <button type="submit" class="submit">Send Message</button>
       </form>
     </section>
 
+    <!-- Reservation Form -->
     <section class="contact-section">
       <h2>Reservation Form</h2>
+      
       <form id="reservationForm" class="contact-form">
+  <input type="hidden" name="access_key" value="f3b65132-0a20-4a61-b48d-dfd73e1a1829">
+
         <label for="reservationName">Full Name</label>
-        <input type="text" id="reservationName" name="reservationName" class="form-input" required>
+        <input type="text" id="reservationName" name="name" class="form-input" required>
         <span id="nameError" class="error-message"></span>
 
         <label for="reservationEmail">Email Address</label>
-        <input type="email" id="reservationEmail" name="reservationEmail" class="form-input" required>
+        <input type="email" id="reservationEmail" name="email" class="form-input" required>
         <span id="emailError" class="error-message"></span>
 
         <label for="partysize">Party Size</label>
-        <input type="number" id="partysize" name="partysize" class="form-input" required>
+        <input type="number" id="partysize" name="party_size" class="form-input" required>
         <span id="partyError" class="error-message"></span>
 
         <label for="reservationDate">Reservation Date</label>
-        <input type="date" id="reservationDate" name="reservationDate" class="form-input" required>
+        <input type="date" id="reservationDate" name="reservation_date" class="form-input" required>
         <span id="dateError" class="error-message"></span>
 
         <label for="reservationMessage">Message</label>
-        <textarea id="reservationMessage" name="reservationMessage" placeholder="Write your message here" class="form-input" required></textarea>
-        
+        <textarea id="reservationMessage" name="message" placeholder="Write your message here" class="form-input" required></textarea>
+
+        <div id="errorMessage" class="error-message"></div>
+
         <button type="submit" class="submit">Reserve Now</button>
       </form>
 
-      <div id="errorMessage"></div>
-      <div id="confirmationMessage"></div>
+      <div id="errorMessage" class="error-message"></div>
+    </section>
 
-      <section id="contact-info">
-        <h3>Our Address</h3>
-        <address>
-          <p><i data-feather="map-pin"></i> 15 Unity Street, Ikeja, Lagos, Nigeria</p>
-          <p><i data-feather="phone"></i> +234 812 345 6789</p>
-          <p><i data-feather="mail"></i> savourybitesng@gmail.com</p>
-        </address>
-      </section>
+    <!-- Contact Info -->
+    <section id="contact-info">
+      <h3>Our Address</h3>
+      <address>
+        <p><i data-feather="map-pin"></i> 15 Unity Street, Ikeja, Lagos, Nigeria</p>
+        <p><i data-feather="phone"></i> +234 812 345 6789</p>
+        <p><i data-feather="mail"></i> savourybitesng@gmail.com</p>
+      </address>
     </section>
   </main>
   
@@ -72,11 +83,5 @@
   
   <script src="contact.js"></script>
   <script src="components.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      feather.replace();
-    });
-  </script>
 </body>
 </html>
-
